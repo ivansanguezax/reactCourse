@@ -1,22 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Greeting, UserCard } from "./Greeting";
+import Product, { Navbar } from "./Product";
+import {MyButton} from "./Button";
+import { TaskCard } from "./Tarea";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function Greeting() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <p>This is a paragraph</p>
-    </div>
-  );
-}
-
 root.render(
-  <div>
-    <Greeting />
-    <Greeting />
-    <Greeting />
-    <Greeting />
-  </div>
+  <>
+    <TaskCard ready={true}/>
+  </>
 );
