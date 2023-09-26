@@ -8,8 +8,17 @@ import { Saludar } from "./Saludar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+
 root.render(
   <>
-    <Saludar />
+    <MyButton text="Saludar" />
+
+    <form onSubmit={(e)=>{
+      e.preventDefault();
+      console.log("Formulario enviado");
+    } }>
+      <h1>Formulario</h1>
+      <button type="submit">Enviar</button>
+    </form>
   </>
 );

@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 
 export function MyButton({text, name='user'}) {
    
-    return <button>
+    return <button onClick ={function(){
+        console.log('click');
+    }}>
         {text} - {name}
     </button>
 }
