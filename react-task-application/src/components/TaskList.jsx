@@ -1,21 +1,22 @@
-import PropTypes from "prop-types";
 import TaskCard from "./TaskCard";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskList({ tasks, deteleTask }) {
+function TaskList() {
+
+  const {tasks}=useContext(TaskContext);
+
+
   if (tasks.length === 0) {
     return <h1>No hay tareas</h1>;
   }
   return (
     <div>
       {tasks.map((task) => (
-        <TaskCard task={task} key={task.id} deteleTask={deteleTask} />
+        <TaskCard task={task} key={task.id} />
       ))}
     </div>
   );
 }
-TaskList.propTypes = {
-  tasks: PropTypes.array.isRequired,
-  deteleTask: PropTypes.func.isRequired,
-};
 
-export default TaskList;
+export default TaskList; 

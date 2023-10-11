@@ -1,9 +1,10 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskForm({ createTask }) {
+function TaskForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const { createTask } = useContext(TaskContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +32,3 @@ function TaskForm({ createTask }) {
 }
 
 export default TaskForm;
-
-TaskForm.propTypes = {
-  createTask: PropTypes.func.isRequired,
-};
