@@ -15,19 +15,23 @@ function TaskForm() {
     e.target.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <div className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="bg-slate-800 p-10 mb-8">
+      <h1 className="text-3xl font-bold mb-4 text-white">Crea tu tarea</h1>
+      <input className="w-full mb-4 p-2 rounded-md bg-slate-900 text-white"
         type="text"
         placeholder="Escribe tu tarea"
         onChange={(e) => setTitle(e.target.value)}
         autoFocus
       />
-      <textarea
+      <textarea className="w-full mb-4 p-2 rounded-md bg-slate-900 text-white"
         placeholder="escribe aqui"
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
-      <button>Guardar</button>
+      <button className="bg-indigo-500 px-2 py-1 rounded-md mt-4 hover:bg-green-400"
+      >Guardar</button>
     </form>
+    </div>
   );
 }
 
